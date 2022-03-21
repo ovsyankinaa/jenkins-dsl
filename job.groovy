@@ -11,10 +11,10 @@ job("day6/MNTLAB-aausiankin-main-build-job"){
     }
   }  
   concurrentBuild()
-  buildstep {
-    buildTrigger {
+  steps {
+    triggerBuilder {
       configs {
-        buildTriggerConfig {
+        blockableBuildTriggerConfig {
           projects($CHILD_JOBS_NAMES)
         }
       }
