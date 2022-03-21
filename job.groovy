@@ -34,7 +34,7 @@ job("day6/MNTLAB-aausiankin-child1-build-job"){
         choiceType('SINGLE_SELECT')
         groovyScript {
         script('''def gitURL = "https://github.com/ovsyankinaa/jenkins-dsl.git" 
-        def command = "git ls-remote -h $gitURL"
+def command = "git ls-remote -h $gitURL"
 
                 def proc = command.execute()
                 proc.waitFor()              
