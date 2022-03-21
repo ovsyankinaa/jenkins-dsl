@@ -1,4 +1,4 @@
-job("MNTLAB-aausiankin-main-build-job"){
+job("day6\\MNTLAB-aausiankin-main-build-job"){
   parameters {
     stringParam('BRANCH_NAME', 'jenkins-dsl', 'Branche name')
     activeChoiceParam('choose jobs for execution') {
