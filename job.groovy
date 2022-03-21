@@ -20,6 +20,11 @@ job("day6/MNTLAB-aausiankin-main-build-job"){
             buildStepFailureThreshold('FAILURE')
             unstableThreshold('UNSTABLE')
             failureThreshold('FAILURE')
+          }
+          configs {
+            predefinedBuildParameters {
+              properties('BRANCH_NAME=$BRANCH_NAME')
+            }
           } 
         }
       }
