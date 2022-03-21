@@ -19,7 +19,7 @@ job("day6/MNTLAB-aausiankin-main-build-job"){
           block {
             buildStepFailureThreshold('FAILURE')
             unstableThreshold('UNSTABLE')
-            ifailureThreshold('FAILURE')
+            failureThreshold('FAILURE')
           } 
         }
       }
