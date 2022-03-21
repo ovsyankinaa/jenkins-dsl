@@ -24,7 +24,7 @@ job("day6/MNTLAB-aausiankin-main-build-job"){
           configs {
             predefinedBuildParameters {
               properties('BRANCH_NAME=$BRANCH_NAME')
-              textParamValueOnNewLine(True)
+              textParamValueOnNewLine('True')
             }
           } 
         }
