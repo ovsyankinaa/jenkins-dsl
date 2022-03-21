@@ -18,8 +18,8 @@ job("day6/MNTLAB-aausiankin-main-build-job"){
           projects('$CHILD_JOBS_NAMES')
           block {
             buildStepFailureThreshold('FAILURE')
-            unstableThreshold('FAILURE')
-            failureThreshold('UNSTABLE')
+            unstableThreshold('UNSTABLE')
+            ifailureThreshold('FAILURE')
           } 
         }
       }
