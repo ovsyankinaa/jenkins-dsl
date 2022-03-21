@@ -16,6 +16,11 @@ job("day6/MNTLAB-aausiankin-main-build-job"){
       configs {
         blockableBuildTriggerConfig {
           projects('$CHILD_JOBS_NAMES')
+          block {
+            buildStepFailureThreshold('FAILURE')
+            unstableThreshold('FAILURE')
+            failureThreshold('UNSTABLE')
+          } 
         }
       }
     } 
