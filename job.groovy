@@ -1,7 +1,7 @@
 job("day6/MNTLAB-aausiankin-main-build-job"){
   parameters {
     stringParam('BRANCH_NAME', 'jenkins-dsl', 'Branche name')
-    activeChoiceParam('JOBS_NAMES') {
+    activeChoiceParam('CHILD_JOBS_NAMES') {
       description('User can choose jobs for execution')
         choiceType('CHECKBOX')
         groovyScript {
