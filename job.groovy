@@ -13,18 +13,18 @@ job("MNTLAB-aausiankin-main-build-job"){
   }  
 }
 
-job(MNTLAB-aausiankin-child1-build-job){
+job("MNTLAB-aausiankin-child1-build-job"){
   
 }
 
-job(MNTLAB-aausiankin-child2-build-job){
+job("MNTLAB-aausiankin-child2-build-job"){
   
 }
   
-job(MNTLAB-aausiankin-child3-build-job){
+job("MNTLAB-aausiankin-child3-build-job"){
   
 }
 
-job(MNTLAB-aausiankin-child4-build-job){
+job("MNTLAB-aausiankin-child4-build-job"){
   
 }
