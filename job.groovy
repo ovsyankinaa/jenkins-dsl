@@ -46,7 +46,7 @@ job("day6/MNTLAB-aausiankin-child1-build-job"){
                 }
 
                 def branches = proc.in.text.readLines().collect { 
-                  it.replaceAll(/[a-z0-9]*\\refs\\/heads\\//, "") 
+                  it.replaceAll(/[a-z0-9]*\\trefs\\/heads\\//, "") 
                 }     
 
                 return branches
