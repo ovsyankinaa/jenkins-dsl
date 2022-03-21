@@ -10,7 +10,7 @@ job("day6/MNTLAB-aausiankin-main-build-job"){
       }
     }
   }  
-  incurrentBuild()
+  concurrentBuild()
   buildTrigger {
     configs {
       buildTriggerConfig {
