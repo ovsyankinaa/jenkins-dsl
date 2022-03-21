@@ -15,7 +15,7 @@ job("day6/MNTLAB-aausiankin-main-build-job"){
     triggerBuilder {
       configs {
         blockableBuildTriggerConfig {
-          projects($CHILD_JOBS_NAMES)
+          projects('$CHILD_JOBS_NAMES')
         }
       }
     } 
