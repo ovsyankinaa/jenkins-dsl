@@ -33,8 +33,7 @@ job("day6/MNTLAB-aausiankin-child1-build-job"){
       description('Branch name')
         choiceType('SINGLE_SELECT')
         groovyScript {
-        script('''
-                def gitURL = "https://github.com/ovsyankinaa/jenkins-dsl.git" 
+        script('def gitURL = "https://github.com/ovsyankinaa/jenkins-dsl.git" 
                 def command = "git ls-remote -h $gitURL"
 
                 def proc = command.execute()
@@ -46,11 +45,10 @@ job("day6/MNTLAB-aausiankin-child1-build-job"){
                 }
 
                 def branches = proc.in.text.readLines().collect { 
-                  it.replaceAll(/[a-z0-9]*\\trefs\\/heads\\//, "") 
+                  it.replaceAll(/[a-z0-9]*\\trefs\\/heads\\//, '') 
                 }     
 
-                return branches
-        ''')
+                return branches')
         fallbackScript()
       }
     }
