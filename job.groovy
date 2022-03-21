@@ -4,7 +4,7 @@ job("MNTLAB-aausiankin-main-build-job"){
     activeChoiceParam('choose jobs for execution') {
       description('User can choose jobs for execution')
         filterable()
-        choiceType('CHECK_BOXES')
+        choiceType('CHECKBOX')
         groovyScript {
         script('["MNTLAB-aausiankin-child1-build-job", "MNTLAB-aausiankin-child2-build-job", "MNTLAB-aausiankin-child3-build-job", "MNTLAB-aausiankin-child4-build-job"]')
         fallbackScript()
