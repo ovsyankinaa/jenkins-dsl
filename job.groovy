@@ -59,6 +59,7 @@ return branches
 job("day6/MNTLAB-aausiankin-child1-build-job"){
   parameters {
     stringParam('BRANCH_NAME', 'main', 'Branche name')
+  }
   steps {
     shell('sleep 20')
   }  
