@@ -64,8 +64,14 @@ job("day6/MNTLAB-aausiankin-child1-build-job"){
     git('https://github.com/ovsyankinaa/jenkins-dsl.git', '$BRANCH_NAME')
   }
   steps {
-    shell('chmod +x ./script.sh && ./script.sh > result.txt')
+    shell('chmod +x ./script.sh && ./script.sh > result.txt && tar -czf artifact.tar.gz result.txt script.sh')
   }  
+  publishers {
+    archiveArtifacts {
+      pattern('artifact.tar.gz')
+      onlyIfSuccessful()
+    }
+  }
 }
 
 job("day6/MNTLAB-aausiankin-child2-build-job"){
