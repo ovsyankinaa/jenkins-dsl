@@ -47,7 +47,7 @@ return branches
           configs {
             predefinedBuildParameters {
               properties('''BRANCH_NAME=$BRANCH_NAME
-REP_NAME=${GIT_URL}''')
+REP_NAME=\$GIT_URL''')
               textParamValueOnNewLine(false)
             }
           } 
