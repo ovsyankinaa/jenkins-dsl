@@ -65,11 +65,11 @@ for(int i = 1;i<5;i++) {
       git("${GIT_URL}", '$BRANCH_NAME')
     }
     steps {
-      shell('chmod +x ./script.sh && ./script.sh > result.txt && tar -czf artifact.tar.gz result.txt script.sh')
+      shell("chmod +x ./script.sh && ./script.sh > result.txt && tar -czf ${BRANCH_NAME}_dsl_script.tar.gz result.txt script.sh")
     }  
     publishers {
       archiveArtifacts {
-        pattern('artifact.tar.gz')
+        pattern("${BRANCH_NAME}_dsl_script.tar.gz")
         onlyIfSuccessful()
       }
     }
