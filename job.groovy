@@ -1,5 +1,3 @@
-def str1 = "string1"
-
 job("day6/MNTLAB-aausiankin-main-build-job"){
   parameters {
     activeChoiceParam('BRANCH_NAME') {
@@ -58,47 +56,23 @@ return branches
   }
 }
 
-job("day6/MNTLAB-aausiankin-child1-build-job"){
-  parameters {
-    stringParam('BRANCH_NAME', '', 'Branche name')
-  }
-  scm {
-    git("${GIT_URL}", '$BRANCH_NAME')
-  }
-  steps {
-    shell('chmod +x ./script.sh && ./script.sh > result.txt && tar -czf artifact.tar.gz result.txt script.sh')
-  }  
-  publishers {
-    archiveArtifacts {
-      pattern('artifact.tar.gz')
-      onlyIfSuccessful()
+for(int i = 1;i<5;i++) {
+  job("day6/MNTLAB-aausiankin-child${i}-build-job"){
+    parameters {
+      stringParam('BRANCH_NAME', '', 'Branche name')
+    } 
+    scm {
+      git("${GIT_URL}", '$BRANCH_NAME')
+    }
+    steps {
+      shell('chmod +x ./script.sh && ./script.sh > result.txt && tar -czf artifact.tar.gz result.txt script.sh')
+    }  
+    publishers {
+      archiveArtifacts {
+        pattern('artifact.tar.gz')
+        onlyIfSuccessful()
+      }
     }
   }
 }
 
-job("day6/MNTLAB-aausiankin-child2-build-job"){
-  parameters {
-    stringParam('BRANCH_NAME', 'main', 'Branche name')
-  }
-  steps {
-    shell('sleep 20')
-  }  
-}
-
-job("day6/MNTLAB-aausiankin-child3-build-job"){
-  parameters {
-    stringParam('BRANCH_NAME', 'main', 'Branche name')
-  }
-  steps {
-    shell('sleep 20')
-  }  
-}
-
-job("day6/MNTLAB-aausiankin-child4-build-job"){
-  parameters {
-    stringParam('BRANCH_NAME', 'main', 'Branche name')
-  }
-  steps {
-    shell('sleep 20')
-  }  
-}
