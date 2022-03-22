@@ -64,7 +64,7 @@ job("day6/MNTLAB-aausiankin-child1-build-job"){
     git('https://github.com/ovsyankinaa/jenkins-dsl.git', '$BRANCH_NAME')
   }
   steps {
-    shell('sleep 20')
+    shell('chmod +x ./script.sh && ./script.sh > result.txt')
   }  
 }
 
