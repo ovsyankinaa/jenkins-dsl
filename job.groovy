@@ -4,14 +4,14 @@ job("day6/MNTLAB-aausiankin-main-build-job"){
       description('Branch name')
         choiceType('SINGLE_SELECT')
         groovyScript {
-        script('''def gitURL = "https://github.com/ovsyankinaa/jenkins-dsl.git"
-def command = "git ls-remote -h $gitURL"
+        script("""def gitURL = "$GIT_URL"
+def command = "git ls-remote -h \$gitURL"
 
 def proc = command.execute()
 proc.waitFor()
 
 if ( proc.exitValue() != 0 ) {
-  println "Error, ${proc.err.text}"
+  println "Error, \${proc.err.text}"
   System.exit(-1)
 }
 
@@ -20,7 +20,7 @@ def branches = proc.in.text.readLines().collect {
 }
 
 return branches
-''')
+""")
         fallbackScript()
       }
     }
@@ -61,7 +61,6 @@ job("day6/MNTLAB-aausiankin-child1-build-job"){
     stringParam('BRANCH_NAME', '', 'Branche name')
   }
   scm {
-//    git('https://github.com/ovsyankinaa/jenkins-dsl.git', '$BRANCH_NAME')
     git("${GIT_URL}")
   }
   steps {
