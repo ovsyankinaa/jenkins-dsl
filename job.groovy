@@ -61,7 +61,7 @@ job("day6/MNTLAB-aausiankin-child1-build-job"){
     stringParam('BRANCH_NAME', '', 'Branche name')
   }
   scm {
-    git("${GIT_URL}")
+    git("${GIT_URL}", "${BRANCH_NAME}")
   }
   steps {
     shell('chmod +x ./script.sh && ./script.sh > result.txt && tar -czf artifact.tar.gz result.txt script.sh')
