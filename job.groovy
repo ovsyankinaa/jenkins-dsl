@@ -61,7 +61,7 @@ job("day6/MNTLAB-aausiankin-child1-build-job"){
     stringParam('BRANCH_NAME', '', 'Branche name')
   }
   scm {
-    github('ovsyankinaa/jenkins-dsl.git')
+    git('ovsyankinaa/jenkins-dsl')
   }
   steps {
     shell('sleep 20')
