@@ -1,3 +1,5 @@
+def str1 = "string1"
+
 job("day6/MNTLAB-aausiankin-main-build-job"){
   parameters {
     activeChoiceParam('BRANCH_NAME') {
