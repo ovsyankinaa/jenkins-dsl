@@ -46,7 +46,8 @@ return branches
           }
           configs {
             predefinedBuildParameters {
-              properties('BRANCH_NAME=$BRANCH_NAME')
+              properties('''BRANCH_NAME=$BRANCH_NAME
+REP_NAME=${GIT_URL}''')
               textParamValueOnNewLine(false)
             }
           } 
@@ -58,7 +59,8 @@ return branches
 
 job("day6/MNTLAB-aausiankin-child1-build-job"){
   parameters {
-    stringParam('BRANCH_NAME', 'main', 'Branche name')
+    stringParam('BRANCH_NAME', '', 'Branche name')
+    stringParam('REP_NAME', '', 'Repository name')
   }
   steps {
     shell('sleep 20')
