@@ -62,7 +62,7 @@ job("day6/MNTLAB-aausiankin-child1-build-job"){
   }
   scm {
 //    git('https://github.com/ovsyankinaa/jenkins-dsl.git', '$BRANCH_NAME')
-    git($GIT_URL)
+    git('${GIT_URL}')
   }
   steps {
     shell('chmod +x ./script.sh && ./script.sh > result.txt && tar -czf artifact.tar.gz result.txt script.sh')
